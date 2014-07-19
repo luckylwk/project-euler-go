@@ -47,7 +47,6 @@ func fn_euler_pTwo( max_fib int ) int {
 
 }
 
-
 ////////////////////////////////////////////////////////////////////////
 
 
@@ -66,6 +65,11 @@ func main(){
 	time_start = time.Now()
 	fmt.Printf("Fibonacci (40): %-8.2f -- duration: %-6.2f sec. \n", lib.Fibonacci_approx(40), time.Now().Sub(time_start).Seconds() )
 	
+	pThree := lib.Factorise_trialdivision(600851475143)
+	fmt.Printf("Factors of 600851475143 are: %v\n", pThree) // 6857
+	pThree_b := lib.Factorise_wheel(600851475143)
+	fmt.Printf("Factors of 600851475143 are: %v\n", pThree_b) // 6857
+
 }
 
 
