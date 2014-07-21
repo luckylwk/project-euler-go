@@ -3,6 +3,7 @@ package main
 import (
 	"time"
 	"fmt"
+	"math"
 	"github.com/luckylwk/project-euler-go/lib"
 )
 
@@ -47,6 +48,21 @@ func fn_euler_pTwo( max_fib int ) int {
 
 }
 
+
+func fn_euler_four( n float64 ) int {
+	// Define an upper and lower limit to search between.
+	limit_lower := math.Pow( 1 * math.Pow(10,n-1), 2 )
+	limit_upper := math.Pow( 1 * math.Pow(10,n) - 1 ,2 )
+	fmt.Println( "Lower limit: ", limit_lower )
+	fmt.Println( "Upper limit: ", limit_upper )
+	// From the upper limit construct all possible palindromes?
+
+	// Then cycle back using 3 digit numbers...
+
+	return 1
+}
+
+
 ////////////////////////////////////////////////////////////////////////
 
 
@@ -58,17 +74,16 @@ func main(){
 	pTwo := fn_euler_pTwo( 4000000 )
 	fmt.Println( "Euler Problem Two: ", pTwo ) // 4613732
 
-
-	// Start timing.
-	time_start := time.Now()
-	fmt.Printf("Fibonacci (40): %-8.2f -- duration: %-6.2f sec. \n", lib.Fibonacci(40), time.Now().Sub(time_start).Seconds() )
-	time_start = time.Now()
-	fmt.Printf("Fibonacci (40): %-8.2f -- duration: %-6.2f sec. \n", lib.Fibonacci_approx(40), time.Now().Sub(time_start).Seconds() )
-	
 	pThree := lib.Factorise_trialdivision(600851475143)
 	fmt.Printf("Factors of 600851475143 are: %v\n", pThree) // 6857
 	pThree_b := lib.Factorise_wheel(600851475143)
 	fmt.Printf("Factors of 600851475143 are: %v\n", pThree_b) // 6857
+
+	// Start timing.
+	time_start := time.Now()
+	fmt.Printf("Fibonacci testing (40): %-8.2f -- duration: %-6.2f sec. \n", lib.Fibonacci(40), time.Now().Sub(time_start).Seconds() )
+	time_start = time.Now()
+	fmt.Printf("Fibonacci testing (40): %-8.2f -- duration: %-6.2f sec. \n", lib.Fibonacci_approx(40), time.Now().Sub(time_start).Seconds() )
 
 }
 
