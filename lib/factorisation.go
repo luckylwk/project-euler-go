@@ -13,13 +13,13 @@ func Factorise_trialdivision( n uint64 ) []uint64 {
 	var div uint64 =  2
 	for n > 1 {
 		for n % div == 0 {
-				output = append(output, div)
-				n /= div
+			output = append(output, div)
+			n /= div
 		}
 		if div == 2 {
-				div++
+			div++
 		} else {
-				div += 2
+			div += 2
 		}
 	}
 	return output

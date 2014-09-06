@@ -1,7 +1,9 @@
 // Created to test using different packages.
 package lib
 
-import "math"
+import (
+	"math"
+)
 
 
 ////////////////////////////////////////////////////////////////////////
