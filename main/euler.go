@@ -115,6 +115,22 @@ func fn_euler_seven( n int ) int {
 	return 0
 }
 
+func fn_euler_nine( n int ) int {
+	// There exists exactly one Pythagorean triplet for which a + b + c = 1000.
+	// Find the product abc.
+	div := int(n/3)
+	for a := 0; a < div; a++ {
+		for b := (a+1); b < a+div; b++ {
+			for c := (b+1); c < b+div; c++ {
+				if (a + b + c) == n && (a*a + b*b) == (c*c) {
+					return a*b*c
+				}
+			}
+		}
+	}
+	return 0
+}
+
 func fn_euler_twentyfive( n int ) int {
 	// What is the first term in the Fibonacci sequence to contain 1000 digits?
 	golden_ratio := 1.61803398875
@@ -140,6 +156,10 @@ func main(){
 	// fmt.Println( "Euler Problem Six: ", fn_euler_six( 100 ) ) // 25164150
 
 	// fmt.Println( "Euler Problem Seven: ", fn_euler_seven(10001) ) // 104743
+
+	//
+
+	fmt.Println( "Euler Problem Nine: ", fn_euler_nine(1000) ) // 31875000
 
 	//
 
